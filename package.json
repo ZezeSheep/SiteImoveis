@@ -1,0 +1,36 @@
+{
+  "name": "siteimoveis",
+  "version": "1.0.0",
+  "description": "Este projeto trata-se de uma aplicação web para alugar casas e apartamentos.",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZezeSheep/SiteImoveis.git"
+  },
+  "keywords": [
+    "aluguel",
+    "imoveis",
+    "node.js",
+    "desenvolvimento",
+    "software",
+    "CEFETMG"
+  ],
+  "author": "Raphael Assis, José Antônio, Gleiston Guimarães",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZezeSheep/SiteImoveis/issues"
+  },
+  "homepage": "https://github.com/ZezeSheep/SiteImoveis#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
