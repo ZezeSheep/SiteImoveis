@@ -2,16 +2,24 @@ const express = require('express')
 const morgan = require('morgan')
 const cors = require('cors')
 const routes = require('./routes/rotas')
+const handlebars = require('express-handlebars')
+const Sequelize = require('sequelize');
+const database = require('./bd');
 
+// Seta a porta da aplicação
 porta = process.env.PORT || 21262;
 
 const app = express()
 
+// Configura o template engine da aplicação
+app.engine('handlebars',handlebars({defaultLayout: 'main'}))
+app.set('view engine','handlebars')
+
+// Configura os módulos de auxilio da aplicação
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cors())
 app.use(routes)
-//app.use('/static', express.static(__dirname + '/routes/imgs'));
 app.use(express.static('routes'));
 
 var favicon = require('serve-favicon');
