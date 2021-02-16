@@ -1,0 +1,12 @@
+<h1>Lista de Apartamentos</h1>
+
+{{apartamentos.dataValues.titulo}}
+
+{{#each apartamentos}}
+
+    {{apartamentos.dataValues.titulo}}
+    <p>{{apartamentos.dataValues.descricao}}</p>
+    <p>{{apartamentos.dataValues.comodidades}}</p>
+    <p>{{apartamentos.dataValues.endereco}}</p>
+
+{{/each}}

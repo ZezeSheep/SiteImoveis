@@ -1,7 +1,8 @@
-const Sequelize = require('sequelize');
 const database = require('./bd');
 
-const Usuarios = database.define('usuarios',{
+const Sequelize = database.Sequelize;
+
+const Usuarios = database.sequelize.define('usuarios',{
     cpf: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -25,7 +26,7 @@ const Usuarios = database.define('usuarios',{
     }
 })
 
-const Apartamentos = database.define('apartamentos', {
+const Apartamentos = database.sequelize.define('apartamentos', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -77,11 +78,15 @@ const Apartamentos = database.define('apartamentos', {
     },
     iptu: {
         type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    imagem: {
+        type: Sequelize.STRING,
         allowNull: false
     }
 })
 
-const Casas = database.define('casas', {
+const Casas = database.sequelize.define('casas', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -133,6 +138,10 @@ const Casas = database.define('casas', {
     },
     iptu: {
         type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    imagem: {
+        type: Sequelize.STRING,
         allowNull: false
     }
 })

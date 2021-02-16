@@ -10,13 +10,13 @@ rotas.get('/', (req,res) => {
     return res.sendFile(path.join(__dirname+'/index.html'));
 })
 
-rotas.get('/casas', (req,res) => {
-    return res.sendFile(path.join(__dirname+'/index.html'));
-})
+//rotas.get('/casas', (req,res) => {
+//    return res.sendFile(path.join(__dirname+'/index.html'));
+//})
 
-rotas.get('/apartamentos', (req,res) => {
-    return res.sendFile(path.join(__dirname+'/index.html'));
-})
+//rotas.get('/apartamentos', (req,res) => {
+    //return res.sendFile(path.join(__dirname+'/index.html'));
+//})
 
 rotas.get('/contato', (req,res) => {
     return res.sendFile(path.join(__dirname+'/index.html'));
