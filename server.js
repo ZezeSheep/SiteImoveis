@@ -35,8 +35,8 @@ app.use('/favicon.ico', express.static('imgs/favicon.ico'));
 
 app.get('/apartamentos', function(req, res){
     database.Apartamentos.findAll().then(function(apartamentos){
-        //console.log(apartamentos)
-        res.render('home',{apartamentos: apartamentos})
+        console.log(apartamentos)
+        res.render('home',apartamentos)
     })
 })
 
