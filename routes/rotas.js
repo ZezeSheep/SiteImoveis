@@ -1,19 +1,23 @@
+/**
+ * Este módulo é responsável por definir as rotas da aplicação
+ */
+
 const express = require('express')
 const rotas = express.Router()
-const path = require('path');
+//const path = require('path');
 const database = require('../models/database');
 
 //Página inicial do site
-rotas.get('/contato', (req,res) => {
+rotas.get('/', (req,res) => {
     res.render('index');
+})
+
+rotas.get('/contato', (req,res) => {
+    res.render('contato');
 })
 
 rotas.get('/sobre', (req,res) => {
-    res.render('index');
-})
-
-rotas.get('/', (req,res) => {
-    res.render('index');
+    res.render('sobre');
 })
 
 rotas.get('/apartamentos', function(req, res){
@@ -26,8 +30,7 @@ rotas.get('/casas', function(req, res){
      database.Casas.findAll().then(function(casas){
           res.render('home',{imovel: casas})
       })
-  
-  })
+})
  
 rotas.get('/cadastrar-imovel',function(req, res){
      res.render('formulario_imovel');

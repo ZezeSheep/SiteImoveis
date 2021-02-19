@@ -27,10 +27,30 @@
           </nav>
         </header>
 
+        <!-- Bot do blip -->
+        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+        </script>
+        <script>
+            (function () {
+                window.onload = function () {
+                    new BlipChat()
+                    .withAppKey('d2FsbGU5OmRjMjM1NmExLTRjMzMtNDlhMC05ZDA3LTIzNGE5YWY0MzcyNQ==')
+                    .withButton({"color":"#7341eb","icon":""})
+                    .withCustomCommonUrl('https://builder.chat.blip.ai/')
+                    .build();
+                }
+            })();
+        </script>
+                                
+
         <!-- Corpo da página -->
         <div style="background-color: #C5C1C0;margin-top: 0px">
           {{{body}}}
         </div>
+
+        <footer>
+
+        </footer>
                 
     </body>
   </html>
