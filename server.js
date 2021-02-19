@@ -34,11 +34,18 @@ app.use(favicon(__dirname + '/routes/imgs/favicon.ico'));
 app.use('/favicon.ico', express.static('imgs/favicon.ico'));
 
 app.get('/apartamentos', function(req, res){
-    database.Apartamentos.findAll().then(function(apartamentos){
-        console.log(apartamentos)
-        res.render('home',apartamentos)
+   database.Apartamentos.findAll().then(function(apartamentos){
+        res.render('home',{imovel: apartamentos})
     })
+
 })
+
+app.get('/casas', function(req, res){
+    database.Casas.findAll().then(function(casas){
+         res.render('home',{imovel: casas})
+     })
+ 
+ })
 
 app.get('/cadastrar-imovel',function(req, res){
     res.render('formulario_imovel');
