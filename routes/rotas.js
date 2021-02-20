@@ -57,7 +57,7 @@ rotas.get('/cadastrar-imovel',function(req, res){
              iptu: req.body.iptu,
              imagem: req.body.imagem
          }).then(function (){
-             res.send('Apartamento cadastrado com sucesso!');
+             //res.send('Apartamento cadastrado com sucesso!');
              res.redirect("/")
          }).catch(function(erro){
              res.send('Opps, tivemos um erro ao acessar o banco de dados, tente novamente mais tarde.');
@@ -79,7 +79,7 @@ rotas.get('/cadastrar-imovel',function(req, res){
              iptu: req.body.iptu,
              imagem: req.body.imagem
          }).then(function (){
-             res.send('Casa cadastrada com sucesso!');
+             //res.send('Casa cadastrada com sucesso!');
              res.redirect("/")
          }).catch(function(erro){
              res.send('Opps, tivemos um erro ao acessar o banco de dados, tente novamente mais tarde.');
