@@ -10,8 +10,8 @@
     </head>
     <body>
       <!-- Menu navbar -->
-        <header>
-          <nav class="navbar navbar-dark bg-primary">
+        <header style="margin-bottom: 0px;">
+          <nav class="navbar navbar-dark bg-primary" style="margin-bottom: 0px;">
               <div class="container-fluid">
                 <a class="navbar-brand" href="/">
                   <img src="imgs\z.png" alt="" width="30" height="24" class="d-inline-block align-top">
@@ -20,12 +20,37 @@
                 <a class="navbar-brand" href="/casas">Casas</a>
                 <a class="navbar-brand" href="/apartamentos">Apartamentos</a>
                 <a class="navbar-brand" href="/contato">Contato</a>
+                <a class="navbar-brand" href="/cadastrar-imovel">Cadastrar imóvel</a>
+                <a class="navbar-brand" href="/cadastrar-usuario">Cadastrar usuário</a>
                 <a class="navbar-brand" href="/sobre">Sobre nós</a>
               </div>
           </nav>
         </header>
 
+        <!-- Bot do blip -->
+        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript">
+        </script>
+        <script>
+            (function () {
+                window.onload = function () {
+                    new BlipChat()
+                    .withAppKey('eml6aTE6NWZkOTAzM2ItYTBiZS00MWE0LThmYzQtZGJhNjZiZDZiOWFk')
+                    .withButton({"color":"#2CC3D5","icon":""})
+                    .withCustomCommonUrl('https://chat.blip.ai/')
+                    .build();
+                }
+            })();
+        </script>
+                                
+
         <!-- Corpo da página -->
-        {{{body}}}
+        <div style="background-color: #C5C1C0;margin-top: 0px">
+          {{{body}}}
+        </div>
+
+        <footer>
+
+        </footer>
+                
     </body>
   </html>

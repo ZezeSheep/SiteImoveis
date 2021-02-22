@@ -1,5 +1,9 @@
-const database = require('./bd');
+/*
+Este módulo é responsável por descrever as tabelas do banco de dados.
+Retorna um objeto com as tabelas.
+*/
 
+const database = require('./bd');
 const Sequelize = database.Sequelize;
 
 const Usuarios = database.sequelize.define('usuarios',{
@@ -145,10 +149,6 @@ const Casas = database.sequelize.define('casas', {
         allowNull: false
     }
 })
-
-//Usuarios.sync({force: true})
-//Apartamentos.sync({force: true})
-//Casas.sync({force: true})
 
 module.exports = {
     Usuarios,
