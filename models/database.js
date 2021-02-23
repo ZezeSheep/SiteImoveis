@@ -45,22 +45,27 @@ const Apartamentos = database.sequelize.define('apartamentos', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    comodidades: {
-        type: Sequelize.STRING
-    },
     endereco: {
         type: Sequelize.STRING,
         allowNull: false
     },
-    cep: {
-        type: Sequelize.STRING,
+    andar: {
+        type: Sequelize.INTEGER,
         allowNull: false
     },
     num_quartos: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    num_banheiro: {
+    num_suites: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    num_salas_estar: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    num_salas_jantar: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -72,6 +77,10 @@ const Apartamentos = database.sequelize.define('apartamentos', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
+    possui_armario_embutido: {
+        type: Sequelize.BOOLEAN,
+        allowNull: false
+    },
     aluguel: {
         type: Sequelize.INTEGER,
         allowNull: false
@@ -80,7 +89,7 @@ const Apartamentos = database.sequelize.define('apartamentos', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    iptu: {
+    possui_condominio_24h: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -105,14 +114,7 @@ const Casas = database.sequelize.define('casas', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    comodidades: {
-        type: Sequelize.STRING
-    },
     endereco: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    cep: {
         type: Sequelize.STRING,
         allowNull: false
     },
@@ -120,7 +122,11 @@ const Casas = database.sequelize.define('casas', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
-    num_banheiro: {
+    num_suites: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    num_salas_estar: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
@@ -130,6 +136,10 @@ const Casas = database.sequelize.define('casas', {
     },
     area: {
         type: Sequelize.INTEGER,
+        allowNull: false
+    },
+    possui_armario_embutido: {
+        type: Sequelize.BOOLEAN,
         allowNull: false
     },
     aluguel: {
@@ -150,8 +160,42 @@ const Casas = database.sequelize.define('casas', {
     }
 })
 
+const Agendamentos = database.sequelize.define('agendamentos', {
+    id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        allowNull: false,
+        primaryKey: true
+    },
+    UsuarioID: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: Usuarios,
+            key: 'cpf'
+        }
+    },
+    CasaID: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: Casas,
+            key: 'id'
+        }
+    },
+    ApartamentoID: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: Apartamentos,
+            key: 'id'
+        }
+    }
+})
+
 module.exports = {
     Usuarios,
     Apartamentos,
-    Casas
+    Casas,
+    Agendamentos
 }

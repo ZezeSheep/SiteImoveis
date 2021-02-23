@@ -1,0 +1,110 @@
+<div class="blog">
+
+    <h1>Lista de Casas disponíveis</h1>
+
+    {{#each imovel}}
+
+        <div class="post">
+            <h2 class="card-title">{{dataValues.titulo}}</h2>
+            <p class="card-text">{{dataValues.descricao}}</p>
+            <p class="card-text">Endereço: {{dataValues.endereco}}</p>
+            <div class="descricao">
+                <p>{{dataValues.num_quartos}} quartos</p>
+                <p>{{dataValues.num_suites}} suítes</p>
+                <p>{{dataValues.num_salas_estar}} salas de estar</p>
+                <p>{{dataValues.num_garagem}} vagas de garagem</p>
+                <p>{{dataValues.area}} m²</p>
+            </div>
+            <img src={{dataValues.imagem}} class="card-img-top" alt="casa imagem">
+            <div class="div-pai">
+
+                <div class="div-filho">                   
+                    <p class="card-text">Aluguel: {{dataValues.aluguel}}</p>
+                    <p class="card-text">Condominio: {{dataValues.condominio}}</p>
+                    <p class="card-text">IPTU: {{dataValues.iptu}}</p>
+                </div>
+
+                <div class="div-filho">
+                    <form action="\agendar-visita" method="POST">
+                        <p>Agendar Visita</p>
+                        <div class="entrada">
+                            <label for="tipo_imovel" class="form-label">Dia da visita: </label>
+                            <input id="date" type="date" name="data">
+                        </div>
+                        <div class="entrada selecao">
+                            <label for="tipo_imovel" class="form-label">Horário da visita: </label>
+                            <select class="form-select" aria-label="tipo_imovel" name="horario">
+                                <option selected value="1">10:00</option>
+                                <option value="2">11:00</option>
+                                <option value="2">14:00</option>
+                                <option value="2">15:00</option>
+                                <option value="2">16:00</option>
+                                <option value="2">17:00</option>
+                            </select>                          
+                        </div>
+                        <button type="submit" class="btn btn-primary">Finalizar</button>
+                    </form>
+                </div>
+            </div>        
+        </div>
+
+    {{/each}}
+
+</div>
+
+<style>
+    .blog {
+        max-width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    .post {
+        margin: 25px;
+        padding: 25px;
+        background-color: white;
+        font-style: normal;
+        font-weight: 500;
+        font-variant: normal;
+    }
+
+    .post h2 {
+        font-size: x-large;
+    }
+
+    .post p {
+        font-size: larger;
+    }
+
+    .descriacao {
+        display: inline;
+    }
+
+    .div-pai .div-filho {
+        display: inline-block;
+        align-content: space-around;
+        padding: 20px;
+        margin-top: 0px;
+    }
+
+    .div-pai .div-filho:first-child{
+        margin-right: 80px;
+    }
+
+    .entrada {
+        display: inline-block;
+        align-content: space-around;
+    }
+
+    .selecao {
+        display: inline-block;
+    }
+
+    button {
+        display: grid !important;
+    }
+</style>
+

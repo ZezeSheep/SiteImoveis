@@ -10,3 +10,4 @@ const database = require('./database');
 database.Usuarios.sync({force: true})
 database.Apartamentos.sync({force: true})
 database.Casas.sync({force: true})
+database.Agendamentos.sync({force: true})
