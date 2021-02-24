@@ -90,7 +90,7 @@ const Apartamentos = database.sequelize.define('apartamentos', {
         allowNull: false
     },
     possui_condominio_24h: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.BOOLEAN,
         allowNull: false
     },
     imagem: {
