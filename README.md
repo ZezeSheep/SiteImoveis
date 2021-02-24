@@ -13,13 +13,13 @@ Para cada imóvel cadastrado no sistema é importante saber o seu endereço comp
 
 # Instruções De instalação
 
-1 passo - Baixar os arquivos em uma pasta de trabalho.
-2 passo - Criar um banco de dados no MySQL chamado zizi_imoveis
-3 passo - Executar o comando `npm intall`
-4 passo - Abrir o arquivo /models/db.js e configurar a senha do banco de dados
+* 1 passo - Baixar os arquivos em uma pasta de trabalho.
+* 2 passo - Criar um banco de dados no MySQL chamado zizi_imoveis
+* 3 passo - Executar o comando `npm intall`
+* 4 passo - Abrir o arquivo /models/db.js e configurar a senha do banco de dados
 `const sequelize = new Sequelize('zizi_imoveis','root','SUA_SENHA_ROOT', {host:"localhost",dialect:"mysql"});`
-5 passo - Executar o comando `npm start`
-6 passo - Abrir no navegador o link `http://localhost:21262/`
+* 5 passo - Executar o comando `npm start`
+* 6 passo - Abrir no navegador o link `http://localhost:21262/`
 
 # Tecnologias utilizadas
 
